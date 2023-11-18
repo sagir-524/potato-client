@@ -1,0 +1,13 @@
+a {
+  color: var(--bs-secondary);
+  font-size: 32px;
+  font-weight: 900;
+  line-height: 50px;
+  text-decoration: none;
+}
+
+:host(.light) {
+  a {
+    color: #fff;
+  }
+}

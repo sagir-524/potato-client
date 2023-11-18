@@ -1,0 +1,24 @@
+<div class="card">
+  <div class="card-header">Login</div>
+  <div class="card-body">
+    <form [formGroup]="form" (ngSubmit)="login()">
+      <div class="mb-3">
+        <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
+        <input type="email" name="email" id="email" placeholder="johndoe@example.com" class="form-control" formControlName="email" required>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password <span class="text-danger">*</span></label>
+        <input type="password" name="password" id="password" placeholder="Password" class="form-control" formControlName="password" required>
+      </div>
+      <button type="submit" [disabled]="form.invalid || submitting" class="btn btn-secondary d-inline-flex align-items-center">
+        Login
+        @if (submitting) {
+          &nbsp;
+          <div class="spinner-border spinner-border-sm" role="status">
+            <span class="visually-hidden" role="status">Loading...</span>
+          </div>
+        }
+      </button>
+    </form>
+  </div>
+</div>
